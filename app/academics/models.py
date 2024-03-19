@@ -10,6 +10,22 @@ class User(models.Model):
     updated_at=models.DateTimeField(default=datetime.datetime.now())
     deleted_at= models.DateTimeField(null= True, blank = True)
 
+class Student(models.Model):
+    code=models.CharField(null= True, blank = True)
+    ide_person = models.IntegerField()
+    status= models.BooleanField(null= True, blank = True)
+    cre_at=models.DateTimeField(default=datetime.datetime.now())
+    updated_at=models.DateTimeField(default=datetime.datetime.now())
+    deleted_at= models.DateTimeField(null= True, blank = True)
+
+class Identification_types(models.Model):
+     name = models.CharField(max_length=20)
+     abrev=models.CharField(max_length=20)
+     descrip=models.CharField(max_length=20)
+     created_at=models.DateTimeField(default=datetime.datetime.now())
+     updated_at=models.DateTimeField(default=datetime.datetime.now())
+     deleted_at= models.DateTimeField(null= True, blank = True)
+
 class Person(models.Model):
      firstname = models.CharField(max_length=20)
      lastname=models.CharField(max_length=20)
@@ -19,3 +35,28 @@ class Person(models.Model):
      updated_at=models.DateTimeField(default=datetime.datetime.now())
      deleted_at= models.DateTimeField(null= True, blank = True)
 
+class Cities(models.Model):
+     name = models.CharField(max_length=20)
+     abrev=models.CharField(max_length=20)
+     descrip=models.CharField(max_length=20)
+     ide_dept = models.IntegerField()
+     created_at=models.DateTimeField(default=datetime.datetime.now())
+     updated_at=models.DateTimeField(default=datetime.datetime.now())
+     deleted_at= models.DateTimeField(null= True, blank = True)
+
+class Departments(models.Model):
+     name = models.CharField(max_length=20)
+     abrev=models.CharField(max_length=20)
+     descrip=models.CharField(max_length=20)
+     ide_country = models.IntegerField()
+     created_at=models.DateTimeField(default=datetime.datetime.now())
+     updated_at=models.DateTimeField(default=datetime.datetime.now())
+     deleted_at= models.DateTimeField(null= True, blank = True)
+
+class Countries(models.Model):
+     name = models.CharField(max_length=20)
+     abrev=models.CharField(max_length=20)
+     descrip=models.CharField(max_length=20)
+     created_at=models.DateTimeField(default=datetime.datetime.now())
+     updated_at=models.DateTimeField(default=datetime.datetime.now())
+     deleted_at= models.DateTimeField(null= True, blank = True)
